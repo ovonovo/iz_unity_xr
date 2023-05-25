@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23adefc5ae2c8845978fe24fffd3957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVR: 1
+  isVR: 0
   XRObjects:
   - {fileID: 969542921}
   - {fileID: 377382069}
@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 544e9548-6e6d-4f86-9f63-066868bd844c

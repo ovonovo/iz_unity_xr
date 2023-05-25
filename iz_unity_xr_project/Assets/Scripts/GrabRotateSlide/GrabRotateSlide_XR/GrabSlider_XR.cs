@@ -8,6 +8,7 @@ public class GrabSlider_XR : MonoBehaviour
     public Animator anim;
     ConfigurableJoint configurableJoint;
     float startPosition;
+    public string animatorParameter = "Blend";
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class GrabSlider_XR : MonoBehaviour
         float limitMin = startPosition - configurableJoint.linearLimit.limit;
         float limitMax = startPosition + configurableJoint.linearLimit.limit;
         float value = Map(handle.transform.position.x, limitMin, limitMax, 0, 1);
-        anim.SetFloat("Blend", value);
+        anim.SetFloat(animatorParameter, value);
     }
 
     private float Map(float OldValue, float OldMin, float OldMax, float NewMin, float NewMax)
