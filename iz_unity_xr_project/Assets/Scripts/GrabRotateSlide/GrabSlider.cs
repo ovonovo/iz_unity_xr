@@ -14,6 +14,7 @@ public class GrabSlider : MonoBehaviour
     private Transform handle;
     private Vector3 startPos;
     private float currPos;
+    public string animatorParameter = "Blend";
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class GrabSlider : MonoBehaviour
         handle.localPosition = new Vector3(newPosX, handle.localPosition.y, handle.localPosition.z);
 
         currPos = Map(handle.localPosition.x, minPosX, maxPosX, 0, 1);
-        anim.SetFloat("Blend", currPos);
+        anim.SetFloat(animatorParameter, currPos);
     }
 
     private float Map(float OldValue, float OldMin, float OldMax, float NewMin, float NewMax)
