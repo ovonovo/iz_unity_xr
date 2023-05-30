@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetAsTongueTarget : MonoBehaviour
 {
     CameleonTongue tongue;
-    public bool setAsTongueTarget;
+    public bool setTongueTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +15,14 @@ public class SetAsTongueTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(setAsTongueTarget){
-            tongue.tongueTarget = gameObject;
-            tongue.SetAimSource();
-            setAsTongueTarget = false;
+        if(setTongueTarget){
+            SetAsTarget();
         }
+    }
+
+    public void SetAsTarget(){
+        tongue.tongueTarget = gameObject;
+        tongue.SetAimSource();
+        setTongueTarget = false;
     }
 }

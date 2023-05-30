@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CameleonTongue : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class CameleonTongue : MonoBehaviour
     ConstraintSource cSource = new ConstraintSource(); 
 
     public float tongueSpeed = .2f;
+    [Tooltip("Ab welcher Nähe das Chamäleon nach dem Futter schnappt")]
+    public float chatchDistance = 1.5f;
     public bool doShoot = false;
     bool isShooting = false;
-    bool catchTarget = false;
+    bool isCatchingTarget = false;
+    bool disabledComponents = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +37,25 @@ public class CameleonTongue : MonoBehaviour
         ShootTongue();
         lr.SetPosition(0, tongueStart.transform.position);
         lr.SetPosition(1, tongueTip.transform.position);
-        
     }
 
     public void ShootTongue() {
         if(tongueTarget == null) return;
+
+        if(Vector3.Distance(tongueStart.transform.position, tongueTarget.transform.position) < chatchDistance && !isShooting && !isCatchingTarget){
+                print("ishoot");
+                doShoot = true;
+        }
+
+        if(isCatchingTarget && !disabledComponents){
+            if(tongueTarget.GetComponent<XRGrabInteractable>() != null) {
+                Destroy(tongueTarget.GetComponent<XRGrabInteractable>());
+            }
+            if(tongueTarget.GetComponent<Rigidbody>() != null) {
+                Destroy(tongueTarget.GetComponent<Rigidbody>());
+            }
+            disabledComponents = true;
+        }
 
         if(!isShooting && doShoot) {
             isShooting = true;
@@ -50,17 +68,19 @@ public class CameleonTongue : MonoBehaviour
             if(dist < .01f){
                 isShooting = false;
                 doShoot = false;
-                catchTarget = true;
+                isCatchingTarget = true;
             }
         } else {
             tongueTip.transform.position = Vector3.Lerp(tongueTip.transform.position, tongueStart.transform.position, tongueSpeed);
-            if(catchTarget){
+            if(isCatchingTarget){
                 tongueTarget.transform.position = tongueTip.transform.position;
             }
+
             float dist = Vector3.Distance(tongueStart.transform.position, tongueTip.transform.position);
 
-            if(dist < .01f && catchTarget){
-                catchTarget = false;
+            if(dist < .01f && isCatchingTarget){
+                isCatchingTarget = false;
+                disabledComponents = false;
                 Destroy(tongueTarget);
             }
         }
