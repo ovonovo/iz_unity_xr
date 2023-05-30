@@ -5,13 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class HotkeyManager : MonoBehaviour
 {
+    [Header("DT/XR Player")]
+    public GameObject xrPlayer;
+    public GameObject dtPlayer;
+
+    [Header("Menus")]
     public GameObject menuBanner;
     public GameObject helpBanner;
     public GameObject impressumBanner;
     public GameObject quitBanner;
 
+    Transform playerStartPosition;
+    GameObject activePlayer; 
+
+    [Header("PlayerPositions")]
+    public Transform playerPosition0; 
+    public Transform playerPosition1; 
+    public Transform playerPosition2; 
+    public Transform playerPosition3; 
+
     enum States {nothingActive, exitActive, helpActive, menuActive, impressumActive};
     States state;
+
+    void Start(){
+        playerStartPosition = new GameObject().transform;
+        SetPlayerStartPosition();
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,7 +53,7 @@ public class HotkeyManager : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F3)){
             // Startansicht (Kamerapos. (A)): zurück zur Startansicht (damit ist kein Neustart gemeint)i.d.R. Kameraposition A
-            PlayerToPosition(0);
+            PlayerToPosition(playerStartPosition);
         }
         if(Input.GetKeyDown(KeyCode.F4)){
             // Objekt-Info: Fokus bzw. Aufruf der Informationen zum Objekt (z.B. Beschreibung, Techn. Zeichnung, Diashow historischer Abb., etc.)
@@ -42,19 +61,19 @@ public class HotkeyManager : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F5)){
             // Kamerapos./Funktion X: Kameraposition (B) (besondere Ansicht für die Präsentation) ggf. + auslösen Funktion X (z.B. mit Fokus auf wichtige Funktion des Gegenstandes)
-            PlayerToPosition(1);
+            PlayerToPosition(playerPosition0);
         }
         if(Input.GetKeyDown(KeyCode.F6)){
             // weitere ausgewählte Kamerapositionen (C) und/oder Funktionen
-            PlayerToPosition(2);
+            PlayerToPosition(playerPosition1);
         }
         if(Input.GetKeyDown(KeyCode.F7)){
             // weitere ausgewählte Kamerapositionen (D) und/oder Funktionen
-            PlayerToPosition(3);
+            PlayerToPosition(playerPosition2);
         }
         if(Input.GetKeyDown(KeyCode.F8)){
             // weitere ausgewählte Kamerapositionen (E) und/oder Funktionen
-            PlayerToPosition(4);
+            PlayerToPosition(playerPosition3);
         }
         if(Input.GetKeyDown(KeyCode.F9)){
             // Sonderfunktion 1
@@ -97,8 +116,25 @@ public class HotkeyManager : MonoBehaviour
         impressumBanner.SetActive(!impressumBanner.activeSelf);
     }
 
-    void PlayerToPosition(int pos){
+    void SetPlayerStartPosition(){
+        if(xrPlayer.gameObject.activeInHierarchy == true){
+            activePlayer = xrPlayer;
+        } 
+        else if(dtPlayer.gameObject.activeInHierarchy == true){
+            activePlayer = dtPlayer;
+        } 
+        
+        if(activePlayer != null){
+            print("not null");
+            playerStartPosition.position = activePlayer.transform.position;
+            playerStartPosition.rotation = activePlayer.transform.rotation;
+        } 
+    }
+
+    public void PlayerToPosition(Transform pos){
         // setze Player zu bestimmter position
+        activePlayer.transform.position = pos.position;
+        activePlayer.transform.rotation = pos.rotation;
     }
 
     void  ShowObjectInfo(){

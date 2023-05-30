@@ -115,14 +115,16 @@ public class PNC_PlayerController : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward); // local Space to World Space
             playerVelocity = forward * scrollspeed;
             playerVelocity.y -= gravity;
+            controller.Move(playerVelocity * Time.deltaTime);
         }else if(Input.GetAxis("Mouse ScrollWheel") < 0){
             Vector3 forward = transform.TransformDirection(Vector3.forward); // local Space to World Space
             playerVelocity = forward * -scrollspeed;
             playerVelocity.y -= gravity;
+            controller.Move(playerVelocity * Time.deltaTime);
         }else{
             playerVelocity = new Vector3(0, -gravity, 0);
         }
-        controller.Move(playerVelocity * Time.deltaTime);
+        
     }
 
     void SetMarker(){
