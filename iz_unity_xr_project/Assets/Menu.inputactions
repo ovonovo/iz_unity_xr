@@ -1,0 +1,45 @@
+{
+    "name": "Menu",
+    "maps": [
+        {
+            "name": "XR-Controller",
+            "id": "65254249-311a-4a2f-a637-580971c60aa0",
+            "actions": [
+                {
+                    "name": "OpenMenu",
+                    "type": "Button",
+                    "id": "84192560-a4bb-49e2-81f0-b43e1dd1186e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3a24aa92-9053-4ea3-ad5c-f96b156d9131",
+                    "path": "<WMRSpatialController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a09d4d8b-618c-4e9c-bdd9-1d2ac3b60612",
+                    "path": "<ViveController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class HotkeyManager : MonoBehaviour
 {
@@ -10,10 +11,10 @@ public class HotkeyManager : MonoBehaviour
     public GameObject dtPlayer;
 
     [Header("Menus")]
+    public InputActionReference menuButtonXR;
     public GameObject menuBanner;
     public GameObject helpBanner;
     public GameObject impressumBanner;
-    public GameObject quitBanner;
 
     Transform playerStartPosition;
     GameObject activePlayer; 
@@ -30,15 +31,28 @@ public class HotkeyManager : MonoBehaviour
     void Start(){
         playerStartPosition = new GameObject().transform;
         SetPlayerStartPosition();
+        // Option 1 um eine XR Action auszuführen
+        // menuButtonXR.action.performed += menuPerformed;
     }
+    // gehört zu Option 1 um eine XR Action auszuführen
+    // private void menuPerformed(InputAction.CallbackContext obj){
+    //     print("MaNUUa");
+    //     ToggleMenu();
+    // }
 
     // Update is called once per frame
     void Update()
     {
+        // Option 2 um eine XR Action auszuführen
+        if (menuButtonXR.action.triggered)
+        {
+            ToggleMenu();
+        }
+
         // ESC
         if(state != States.exitActive && Input.GetKeyDown(KeyCode.Escape)){
             // Exit: Abfragen, ob wirklich Programm beenden
-            ShowQuitBanner();
+            ShowMenuBanner();
             state = States.exitActive;
         } else if(state == States.exitActive) CloseProgramm();
        
@@ -92,28 +106,42 @@ public class HotkeyManager : MonoBehaviour
         // ESC: Abbrechen
         if(Input.GetKeyDown(KeyCode.Escape)){
             state = States.nothingActive;
-            CloseQuitBanner();
+            CloseAllMenus();
         // ENTER: Beenden
         } else if(Input.GetKeyDown(KeyCode.Return)){
             CloseApplication();
         }
     }
 
-    void ShowQuitBanner(){
+    public void ShowMenuBanner(){
         // enable a canvas
-        quitBanner.SetActive(true);
-    }
-    public void CloseQuitBanner(){
-        // disable a canvas
-        quitBanner.SetActive(false);
+        menuBanner.SetActive(true);
+        helpBanner.SetActive(false);
+        impressumBanner.SetActive(false);
     }
 
-    void ToggleHelp(){
+    public void ToggleMenu(){
+        helpBanner.SetActive(false);
+        impressumBanner.SetActive(false);
+        menuBanner.SetActive(!menuBanner.activeSelf);
+    }
+  
+    public void ToggleHelp(){
         helpBanner.SetActive(!helpBanner.activeSelf);
+        impressumBanner.SetActive(false);
+        menuBanner.SetActive(false);
     }
 
-    void ToggleImpressum(){
+    public void ToggleImpressum(){
+        helpBanner.SetActive(false);
         impressumBanner.SetActive(!impressumBanner.activeSelf);
+        menuBanner.SetActive(false);
+    }
+
+    public void CloseAllMenus(){
+        helpBanner.SetActive(false);
+        impressumBanner.SetActive(false);
+        menuBanner.SetActive(false);
     }
 
     void SetPlayerStartPosition(){

@@ -128,7 +128,7 @@ public class PNC_PlayerController : MonoBehaviour
     }
 
     void SetMarker(){
-        if(mouseOverGround && !mouseDraggingFromObject){
+        if(mouseOverGround && !mouseDraggingFromObject && !mouseOverObject){
             Vector3 mousePos = Input.mousePosition;
             Ray castPoint = cam.ScreenPointToRay(mousePos);
             RaycastHit hit;
