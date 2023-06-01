@@ -47,6 +47,7 @@ public class PhotoToPhotowall : MonoBehaviour
             }
             cnt++;
         }
+        
         if(cnt >= pWall.assignedPhoto.Length){
             for(int i = 0; i < pWall.assignedPhoto.Length; i++){
                 pWall.assignedPhoto[i] = false;
