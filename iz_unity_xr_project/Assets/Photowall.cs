@@ -10,8 +10,11 @@ public class Photowall : MonoBehaviour
     public int cols = 5;
     public int rows = 5;
     public float distance = 2;
+    public int specialPictures = 3;
+
     int gridSize;
     [HideInInspector] public bool[] assignedPhoto;
+    [HideInInspector] public Transform[] assignedPhotoTransform;
     public static GameObject photos;
 
     // Start is called before the first frame update
@@ -24,8 +27,9 @@ public class Photowall : MonoBehaviour
     }
 
     void CreateGrid(){
-        gridSize = cols + rows;
+        gridSize = cols * rows;
         assignedPhoto = new bool[gridSize];
+        assignedPhotoTransform = new Transform[gridSize];
         int cnt = 0;
         for(int y = 1; y <= cols; y++){
             for(int x = 1; x <= rows; x++){
@@ -41,5 +45,6 @@ public class Photowall : MonoBehaviour
     void LoadPositions(){
         gridSize = transform.childCount;
         assignedPhoto = new bool[gridSize];
+        assignedPhotoTransform = new Transform[gridSize];
     }
 }

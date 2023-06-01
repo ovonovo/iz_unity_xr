@@ -6,6 +6,7 @@ public class PhotoToPhotowall : MonoBehaviour
 {
     GameObject photoWall;
     Vector3 targetPosition;
+    Quaternion targetRotation;
     public float timeToWait = 5;
     public float photoSpeed = 1;
     float timer = 0;
@@ -32,6 +33,7 @@ public class PhotoToPhotowall : MonoBehaviour
         
         transform.parent = Photowall.photos.transform;
         transform.position = Vector3.Lerp(transform.position, targetPosition, photoSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, photoSpeed);
     }
 
     void LookForPosition(){
@@ -39,8 +41,13 @@ public class PhotoToPhotowall : MonoBehaviour
         int cnt = 0;
         for(int i = 0; i < pWall.assignedPhoto.Length; i++){
             if(pWall.assignedPhoto[i] == false){
+                if(pWall.assignedPhotoTransform[i] != null){
+                    Destroy(pWall.assignedPhotoTransform[i].gameObject);
+                }
                 targetPosition = photoWall.transform.GetChild(i).position;
+                targetRotation = photoWall.transform.GetChild(i).rotation;
                 pWall.assignedPhoto[i] = true;
+                pWall.assignedPhotoTransform[i] = transform;
                 print("sadasd");
                 didMove = true;
                 break;
@@ -48,12 +55,14 @@ public class PhotoToPhotowall : MonoBehaviour
             cnt++;
         }
         
-        if(cnt >= pWall.assignedPhoto.Length){
-            for(int i = 0; i < pWall.assignedPhoto.Length; i++){
+        // if(cnt >= pWall.assignedPhoto.Length){
+        if(cnt >= pWall.assignedPhotoTransform.Length){
+            for(int i = pWall.specialPictures; i < pWall.assignedPhoto.Length; i++){
                 pWall.assignedPhoto[i] = false;
             }
-            // Destroy(Photowall.photos.transform.GetChild(0).gameObject);
-            targetPosition = photoWall.transform.GetChild(0).position;
+            Destroy(pWall.assignedPhotoTransform[pWall.specialPictures].gameObject);
+            targetPosition = photoWall.transform.GetChild(pWall.specialPictures).position;
+            targetRotation = photoWall.transform.GetChild(pWall.specialPictures).rotation;
         }
     }
 }
