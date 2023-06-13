@@ -915,12 +915,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73189566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0.24999991, z: 0}
+  m_LocalScale: {x: 0.6999999, y: 0.009999999, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1364732106}
-  m_RootOrder: 1
+  m_Father: {fileID: 907041733}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &73189568
 BoxCollider:
@@ -6255,7 +6255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23adefc5ae2c8845978fe24fffd3957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVR: 0
+  isVR: 1
   XRObjects:
   - {fileID: 969542921}
   - {fileID: 377382069}
@@ -6294,7 +6294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1364732106}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &271929977
 Camera:
@@ -7291,6 +7291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueName: User
+  <IsLocked>k__BackingField: 0
   tags: []
 --- !u!114 &377366785
 MonoBehaviour:
@@ -7595,12 +7596,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423202334}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.343, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -0.34299996, y: 0, z: 0}
+  m_LocalScale: {x: 0.49999997, y: 0.01, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1364732106}
-  m_RootOrder: 4
+  m_Father: {fileID: 907041733}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &423202336
 BoxCollider:
@@ -9311,12 +9312,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785289454}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.347, y: -0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: 0.347, y: 0, z: 0}
+  m_LocalScale: {x: 0.49999997, y: 0.01, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1364732106}
-  m_RootOrder: 3
+  m_Father: {fileID: 907041733}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &785289456
 BoxCollider:
@@ -10044,6 +10045,41 @@ Transform:
   m_Father: {fileID: 961369406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907041732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907041733}
+  m_Layer: 0
+  m_Name: FrameModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907041733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907041732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 73189567}
+  - {fileID: 1052810227}
+  - {fileID: 785289455}
+  - {fileID: 423202335}
+  m_Father: {fileID: 1364732106}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907905896
 GameObject:
   m_ObjectHideFlags: 0
@@ -10586,11 +10622,11 @@ Transform:
   m_GameObject: {fileID: 1052810226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.6999999, y: 0.009999999, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1364732106}
-  m_RootOrder: 2
+  m_Father: {fileID: 907041733}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1052810228
 BoxCollider:
@@ -11312,7 +11348,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b8d4fff00195aa4792d649902e68bcd, type: 2}
+  - {fileID: 2100000, guid: d184048d95bbed0438c653310cd7f202, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12413,6 +12449,7 @@ MonoBehaviour:
   activateFloat: Activate
   UIStateBool: UIEnabled
   teleportStateBool: TeleportEnabled
+  animator: {fileID: 0}
   controller: {fileID: 0}
   controllerManager: {fileID: 0}
 --- !u!95 &1355425462
@@ -12680,11 +12717,8 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8875709961651216699}
-  - {fileID: 73189567}
-  - {fileID: 1052810227}
-  - {fileID: 785289455}
-  - {fileID: 423202335}
   - {fileID: 271929975}
+  - {fileID: 907041733}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13450,6 +13484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05625e2da85e44bd82228234d8676e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultActionMap: 
+  playerInput: {fileID: 0}
 --- !u!114 &1440874778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13698,48 +13734,69 @@ MonoBehaviour:
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   teleportState:
     enabled: 0
     m_ID: 2
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   interactState:
     enabled: 0
     m_ID: 3
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   uiState:
     enabled: 0
     m_ID: 4
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+  baseXRController: {fileID: 0}
+  baseXRInteractor: {fileID: 0}
+  baseXRLineVisual: {fileID: 0}
+  teleportXRController: {fileID: 0}
+  teleportXRInteractor: {fileID: 0}
+  teleportLineVisual: {fileID: 0}
+  uiXRController: {fileID: 0}
+  uiXRInteractor: {fileID: 0}
+  uiLineVisual: {fileID: 0}
 --- !u!1 &1489863050
 GameObject:
   m_ObjectHideFlags: 0
@@ -15904,10 +15961,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
     m_Bits: 1
+    m_Mask: 1
   m_AttachTransform: {fileID: 2112263501}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -15916,29 +15973,50 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_AllowHover: 1
+  m_AllowSelect: 1
+  m_IsPerformingManualInteraction: 0
+  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_RegisteredInteractionManager: {fileID: 0}
+  <useAttachPointVelocity>k__BackingField: 0
+  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetPriorityMode>k__BackingField: 0
+  m_DeltaTimeStart: 0
+  m_FrameOn: 0
+  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
+  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -15975,7 +16053,16 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+  m_AllowActivate: 1
+  m_Controller: {fileID: 0}
+  m_ToggleSelectActive: 0
+  m_ToggleSelectDeactivatedThisFrame: 0
+  m_WaitingForSelectDeactivate: 0
+  m_EffectsAudioSource: {fileID: 0}
   precisionGrab: 1
+  initialAttachPosition: {x: 0, y: 0, z: 0}
+  initialAttachRotation: {x: 0, y: 0, z: 0, w: 0}
+  forceGrab: 0
 --- !u!114 &1650661551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17491,10 +17578,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayerMask:
-    serializedVersion: 2
     m_Bits: 32
   m_InteractionLayers:
     m_Bits: 34
+    m_Mask: 34
   m_AttachTransform: {fileID: 1226812130}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -17503,29 +17590,50 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_AllowHover: 1
+  m_AllowSelect: 1
+  m_IsPerformingManualInteraction: 0
+  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_RegisteredInteractionManager: {fileID: 0}
+  <useAttachPointVelocity>k__BackingField: 0
+  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetPriorityMode>k__BackingField: 0
+  m_DeltaTimeStart: 0
+  m_FrameOn: 0
+  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
+  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -17562,6 +17670,12 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+  m_AllowActivate: 1
+  m_Controller: {fileID: 0}
+  m_ToggleSelectActive: 0
+  m_ToggleSelectDeactivatedThisFrame: 0
+  m_WaitingForSelectDeactivate: 0
+  m_EffectsAudioSource: {fileID: 0}
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
@@ -17579,7 +17693,6 @@ MonoBehaviour:
   m_HitDetectionType: 0
   m_SphereCastRadius: 0
   m_RaycastMask:
-    serializedVersion: 2
     m_Bits: 40
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
@@ -17595,6 +17708,15 @@ MonoBehaviour:
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
   m_AnchorRotationMode: 0
+  m_LastTimeHoveredObjectChanged: 0
+  m_PassedHoverTimeToSelect: 0
+  m_LastTimeAutoSelected: 0
+  m_PassedTimeToAutoDeselect: 0
+  m_RaycastHitsCount: 0
+  m_SamplePointsFrameUpdated: -1
+  m_RaycastHitEndpointIndex: 0
+  m_UIRaycastHitEndpointIndex: 0
+  forceGrab: 0
 --- !u!114 &1711377199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18138,6 +18260,7 @@ MonoBehaviour:
   activateFloat: Activate
   UIStateBool: UIEnabled
   teleportStateBool: TeleportEnabled
+  animator: {fileID: 0}
   controller: {fileID: 0}
   controllerManager: {fileID: 0}
 --- !u!95 &1732925954
@@ -18892,10 +19015,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
     m_Bits: 1
+    m_Mask: 1
   m_AttachTransform: {fileID: 796934182}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -18904,29 +19027,50 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_AllowHover: 1
+  m_AllowSelect: 1
+  m_IsPerformingManualInteraction: 0
+  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_RegisteredInteractionManager: {fileID: 0}
+  <useAttachPointVelocity>k__BackingField: 0
+  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetPriorityMode>k__BackingField: 0
+  m_DeltaTimeStart: 0
+  m_FrameOn: 0
+  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
+  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -18963,7 +19107,16 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+  m_AllowActivate: 1
+  m_Controller: {fileID: 0}
+  m_ToggleSelectActive: 0
+  m_ToggleSelectDeactivatedThisFrame: 0
+  m_WaitingForSelectDeactivate: 0
+  m_EffectsAudioSource: {fileID: 0}
   precisionGrab: 1
+  initialAttachPosition: {x: 0, y: 0, z: 0}
+  initialAttachRotation: {x: 0, y: 0, z: 0, w: 0}
+  forceGrab: 0
 --- !u!114 &1779318364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19560,10 +19713,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
-    serializedVersion: 2
     m_Bits: 32
   m_InteractionLayers:
     m_Bits: 34
+    m_Mask: 34
   m_AttachTransform: {fileID: 502726500}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -19572,29 +19725,50 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_AllowHover: 1
+  m_AllowSelect: 1
+  m_IsPerformingManualInteraction: 0
+  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_RegisteredInteractionManager: {fileID: 0}
+  <useAttachPointVelocity>k__BackingField: 0
+  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetPriorityMode>k__BackingField: 0
+  m_DeltaTimeStart: 0
+  m_FrameOn: 0
+  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
+  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -19631,6 +19805,12 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+  m_AllowActivate: 1
+  m_Controller: {fileID: 0}
+  m_ToggleSelectActive: 0
+  m_ToggleSelectDeactivatedThisFrame: 0
+  m_WaitingForSelectDeactivate: 0
+  m_EffectsAudioSource: {fileID: 0}
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
@@ -19648,7 +19828,6 @@ MonoBehaviour:
   m_HitDetectionType: 0
   m_SphereCastRadius: 0
   m_RaycastMask:
-    serializedVersion: 2
     m_Bits: 40
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
@@ -19664,6 +19843,15 @@ MonoBehaviour:
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
   m_AnchorRotationMode: 0
+  m_LastTimeHoveredObjectChanged: 0
+  m_PassedHoverTimeToSelect: 0
+  m_LastTimeAutoSelected: 0
+  m_PassedTimeToAutoDeselect: 0
+  m_RaycastHitsCount: 0
+  m_SamplePointsFrameUpdated: -1
+  m_RaycastHitEndpointIndex: 0
+  m_UIRaycastHitEndpointIndex: 0
+  forceGrab: 0
 --- !u!114 &1795243997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21177,48 +21365,69 @@ MonoBehaviour:
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   teleportState:
     enabled: 0
     m_ID: 2
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   interactState:
     enabled: 0
     m_ID: 3
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
   uiState:
     enabled: 0
     m_ID: 4
     onEnter:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+  baseXRController: {fileID: 0}
+  baseXRInteractor: {fileID: 0}
+  baseXRLineVisual: {fileID: 0}
+  teleportXRController: {fileID: 0}
+  teleportXRInteractor: {fileID: 0}
+  teleportLineVisual: {fileID: 0}
+  uiXRController: {fileID: 0}
+  uiXRInteractor: {fileID: 0}
+  uiLineVisual: {fileID: 0}
 --- !u!1 &2064569866
 GameObject:
   m_ObjectHideFlags: 0
@@ -23095,7 +23304,7 @@ PrefabInstance:
     - target: {fileID: 5441156774761421337, guid: e772d8967fb08e849a1acd9ba225a325,
         type: 3}
       propertyPath: m_Name
-      value: Photo
+      value: Photo zum gucken wies aussieht
       objectReference: {fileID: 0}
     - target: {fileID: 5441156774761421337, guid: e772d8967fb08e849a1acd9ba225a325,
         type: 3}

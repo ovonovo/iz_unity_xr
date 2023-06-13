@@ -10,9 +10,9 @@ public class CreatePic : MonoBehaviour
     public RenderTexture photoTexture;
     Texture2D myTexture;
     
-    // [Header("Save Images")]
-    // public bool savePhoto = false;
-    // public string fileName = "myNewPhoto";
+    [Header("Save Images")]
+    public bool savePhoto = false;
+    public string fileName = "myNewPhoto";
     
    
     // public AudioSource audioSource;
@@ -49,13 +49,13 @@ public class CreatePic : MonoBehaviour
         RenderTexture.active = renTex;
         tex.ReadPixels(new Rect(0, 0, renTex.width, renTex.height), 0, 0);
         tex.Apply();
-        // if(savePhoto) SaveImage(tex);
+        if(savePhoto) SaveImage(tex);
         return tex;
     }
 
-    // void SaveImage(Texture2D tex){
-    //     var path = "Assets/RenderedTextures/" + fileName + ".png";
-    //     File.WriteAllBytes(path, tex.EncodeToPNG());
-    //     Debug.Log("Saved file to: " + path);
-    // }
+    void SaveImage(Texture2D tex){
+        var path = "Assets/RenderedTextures/" + fileName + ".png";
+        File.WriteAllBytes(path, tex.EncodeToPNG());
+        Debug.Log("Saved file to: " + path);
+    }
 }
