@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class NavmeshTierController : MonoBehaviour
 {
     public Transform goal;
+    public GameObject ballToEat;
     NavMeshAgent agent;
     public Animator anim;
     int animLayer = 0;
@@ -14,6 +15,7 @@ public class NavmeshTierController : MonoBehaviour
     bool startEating;
     bool isEating;
     public bool isWaiting = true;
+
 
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -60,7 +62,7 @@ public class NavmeshTierController : MonoBehaviour
     }
 
     public void EatBall() {
-        Destroy(goal.gameObject);
+        Destroy(ballToEat);
         isWaiting = true;
     }
 
