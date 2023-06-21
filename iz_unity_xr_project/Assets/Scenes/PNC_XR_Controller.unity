@@ -6255,7 +6255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23adefc5ae2c8845978fe24fffd3957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVR: 1
+  isVR: 0
   XRObjects:
   - {fileID: 969542921}
   - {fileID: 377382069}
@@ -7291,7 +7291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueName: User
-  <IsLocked>k__BackingField: 0
   tags: []
 --- !u!114 &377366785
 MonoBehaviour:
@@ -12449,7 +12448,6 @@ MonoBehaviour:
   activateFloat: Activate
   UIStateBool: UIEnabled
   teleportStateBool: TeleportEnabled
-  animator: {fileID: 0}
   controller: {fileID: 0}
   controllerManager: {fileID: 0}
 --- !u!95 &1355425462
@@ -12553,6 +12551,8 @@ MonoBehaviour:
   picture: {fileID: 5441156774761421337, guid: e772d8967fb08e849a1acd9ba225a325, type: 3}
   photoCamera: {fileID: 271929977}
   photoTexture: {fileID: 8400000, guid: 466ec4f6612624c4f8821eca4315057b, type: 2}
+  savePhoto: 0
+  fileName: myNewPhoto
 --- !u!114 &1364732104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13484,8 +13484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05625e2da85e44bd82228234d8676e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultActionMap: 
-  playerInput: {fileID: 0}
 --- !u!114 &1440874778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13734,69 +13732,48 @@ MonoBehaviour:
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   teleportState:
     enabled: 0
     m_ID: 2
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   interactState:
     enabled: 0
     m_ID: 3
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   uiState:
     enabled: 0
     m_ID: 4
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
-  baseXRController: {fileID: 0}
-  baseXRInteractor: {fileID: 0}
-  baseXRLineVisual: {fileID: 0}
-  teleportXRController: {fileID: 0}
-  teleportXRInteractor: {fileID: 0}
-  teleportLineVisual: {fileID: 0}
-  uiXRController: {fileID: 0}
-  uiXRInteractor: {fileID: 0}
-  uiLineVisual: {fileID: 0}
 --- !u!1 &1489863050
 GameObject:
   m_ObjectHideFlags: 0
@@ -14093,6 +14070,7 @@ MonoBehaviour:
   playerPosition1: {fileID: 1450528059}
   playerPosition2: {fileID: 1973374791}
   playerPosition3: {fileID: 1705091452}
+  upStep: 0.01
 --- !u!114 &1519051263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15961,10 +15939,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
+    serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
     m_Bits: 1
-    m_Mask: 1
   m_AttachTransform: {fileID: 2112263501}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -15973,50 +15951,29 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  m_AllowHover: 1
-  m_AllowSelect: 1
-  m_IsPerformingManualInteraction: 0
-  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  <useAttachPointVelocity>k__BackingField: 0
-  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <targetPriorityMode>k__BackingField: 0
-  m_DeltaTimeStart: 0
-  m_FrameOn: 0
-  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
-  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -16053,16 +16010,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_AllowActivate: 1
-  m_Controller: {fileID: 0}
-  m_ToggleSelectActive: 0
-  m_ToggleSelectDeactivatedThisFrame: 0
-  m_WaitingForSelectDeactivate: 0
-  m_EffectsAudioSource: {fileID: 0}
   precisionGrab: 1
-  initialAttachPosition: {x: 0, y: 0, z: 0}
-  initialAttachRotation: {x: 0, y: 0, z: 0, w: 0}
-  forceGrab: 0
 --- !u!114 &1650661551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17578,10 +17526,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayerMask:
-    m_Bits: 32
+    serializedVersion: 2
+    m_Bits: 4294901792
   m_InteractionLayers:
     m_Bits: 34
-    m_Mask: 34
   m_AttachTransform: {fileID: 1226812130}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -17590,50 +17538,29 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  m_AllowHover: 1
-  m_AllowSelect: 1
-  m_IsPerformingManualInteraction: 0
-  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  <useAttachPointVelocity>k__BackingField: 0
-  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <targetPriorityMode>k__BackingField: 0
-  m_DeltaTimeStart: 0
-  m_FrameOn: 0
-  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
-  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -17670,12 +17597,6 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_AllowActivate: 1
-  m_Controller: {fileID: 0}
-  m_ToggleSelectActive: 0
-  m_ToggleSelectDeactivatedThisFrame: 0
-  m_WaitingForSelectDeactivate: 0
-  m_EffectsAudioSource: {fileID: 0}
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
@@ -17693,7 +17614,8 @@ MonoBehaviour:
   m_HitDetectionType: 0
   m_SphereCastRadius: 0
   m_RaycastMask:
-    m_Bits: 40
+    serializedVersion: 2
+    m_Bits: 4294901800
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
@@ -17708,15 +17630,6 @@ MonoBehaviour:
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
   m_AnchorRotationMode: 0
-  m_LastTimeHoveredObjectChanged: 0
-  m_PassedHoverTimeToSelect: 0
-  m_LastTimeAutoSelected: 0
-  m_PassedTimeToAutoDeselect: 0
-  m_RaycastHitsCount: 0
-  m_SamplePointsFrameUpdated: -1
-  m_RaycastHitEndpointIndex: 0
-  m_UIRaycastHitEndpointIndex: 0
-  forceGrab: 0
 --- !u!114 &1711377199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18260,7 +18173,6 @@ MonoBehaviour:
   activateFloat: Activate
   UIStateBool: UIEnabled
   teleportStateBool: TeleportEnabled
-  animator: {fileID: 0}
   controller: {fileID: 0}
   controllerManager: {fileID: 0}
 --- !u!95 &1732925954
@@ -19015,10 +18927,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
+    serializedVersion: 2
     m_Bits: 1
   m_InteractionLayers:
     m_Bits: 1
-    m_Mask: 1
   m_AttachTransform: {fileID: 796934182}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -19027,50 +18939,29 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  m_AllowHover: 1
-  m_AllowSelect: 1
-  m_IsPerformingManualInteraction: 0
-  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  <useAttachPointVelocity>k__BackingField: 0
-  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <targetPriorityMode>k__BackingField: 0
-  m_DeltaTimeStart: 0
-  m_FrameOn: 0
-  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
-  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -19107,16 +18998,7 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_AllowActivate: 1
-  m_Controller: {fileID: 0}
-  m_ToggleSelectActive: 0
-  m_ToggleSelectDeactivatedThisFrame: 0
-  m_WaitingForSelectDeactivate: 0
-  m_EffectsAudioSource: {fileID: 0}
   precisionGrab: 1
-  initialAttachPosition: {x: 0, y: 0, z: 0}
-  initialAttachRotation: {x: 0, y: 0, z: 0, w: 0}
-  forceGrab: 0
 --- !u!114 &1779318364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19713,10 +19595,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1649619069}
   m_InteractionLayerMask:
-    m_Bits: 32
+    serializedVersion: 2
+    m_Bits: 4294901792
   m_InteractionLayers:
     m_Bits: 34
-    m_Mask: 34
   m_AttachTransform: {fileID: 502726500}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -19725,50 +19607,29 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
-  m_AllowHover: 1
-  m_AllowSelect: 1
-  m_IsPerformingManualInteraction: 0
-  <isInteractingWithUI>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
-  m_RegisteredInteractionManager: {fileID: 0}
-  <useAttachPointVelocity>k__BackingField: 0
-  <attachPointVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <attachPointAngularVelocity>k__BackingField: {x: 0, y: 0, z: 0}
-  <targetPriorityMode>k__BackingField: 0
-  m_DeltaTimeStart: 0
-  m_FrameOn: 0
-  m_VelocityPositionsSum: {x: 0, y: 0, z: 0}
-  m_VelocityNormalsSum: {x: 0, y: 0, z: 0}
   m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
-    m_CallsDirty: 1
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
@@ -19805,12 +19666,6 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
-  m_AllowActivate: 1
-  m_Controller: {fileID: 0}
-  m_ToggleSelectActive: 0
-  m_ToggleSelectDeactivatedThisFrame: 0
-  m_WaitingForSelectDeactivate: 0
-  m_EffectsAudioSource: {fileID: 0}
   m_LineType: 0
   m_BlendVisualLinePoints: 1
   m_MaxRaycastDistance: 30
@@ -19828,7 +19683,8 @@ MonoBehaviour:
   m_HitDetectionType: 0
   m_SphereCastRadius: 0
   m_RaycastMask:
-    m_Bits: 40
+    serializedVersion: 2
+    m_Bits: 4294901800
   m_RaycastTriggerInteraction: 1
   m_RaycastSnapVolumeInteraction: 1
   m_HitClosestOnly: 0
@@ -19843,15 +19699,6 @@ MonoBehaviour:
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
   m_AnchorRotationMode: 0
-  m_LastTimeHoveredObjectChanged: 0
-  m_PassedHoverTimeToSelect: 0
-  m_LastTimeAutoSelected: 0
-  m_PassedTimeToAutoDeselect: 0
-  m_RaycastHitsCount: 0
-  m_SamplePointsFrameUpdated: -1
-  m_RaycastHitEndpointIndex: 0
-  m_UIRaycastHitEndpointIndex: 0
-  forceGrab: 0
 --- !u!114 &1795243997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21365,69 +21212,48 @@ MonoBehaviour:
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   teleportState:
     enabled: 0
     m_ID: 2
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   interactState:
     enabled: 0
     m_ID: 3
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
   uiState:
     enabled: 0
     m_ID: 4
     onEnter:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onUpdate:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
     onExit:
       m_PersistentCalls:
         m_Calls: []
-      m_CallsDirty: 1
-  baseXRController: {fileID: 0}
-  baseXRInteractor: {fileID: 0}
-  baseXRLineVisual: {fileID: 0}
-  teleportXRController: {fileID: 0}
-  teleportXRInteractor: {fileID: 0}
-  teleportLineVisual: {fileID: 0}
-  uiXRController: {fileID: 0}
-  uiXRInteractor: {fileID: 0}
-  uiLineVisual: {fileID: 0}
 --- !u!1 &2064569866
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,9 @@ public class HotkeyManager : MonoBehaviour
     public Transform playerPosition2; 
     public Transform playerPosition3; 
 
+    [Header("Move XR-Player Up and Down")]
+    public float upStep = 0.01f;
+
     enum States {nothingActive, exitActive, helpActive, menuActive, impressumActive};
     States state;
 
@@ -66,7 +69,7 @@ public class HotkeyManager : MonoBehaviour
             ToggleImpressum();
         }
         if(Input.GetKeyDown(KeyCode.F3)){
-            // Startansicht (Kamerapos. (A)): zurück zur Startansicht (damit ist kein Neustart gemeint)i.d.R. Kameraposition A
+            // Startansicht (Kamerapos. (A)): zurück zur Startansicht (damit ist kein Neustart gemeint) i.d.R. Kameraposition (A)
             PlayerToPosition(playerStartPosition);
         }
         if(Input.GetKeyDown(KeyCode.F4)){
@@ -99,6 +102,13 @@ public class HotkeyManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F12)){
             // Neustart der Anwendung / Unity Szene neu laden
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        // move Scene up in VR with arrow keys
+        if (Input.GetKeyDown(KeyCode.UpArrow)){
+            xrPlayer.transform.position += new Vector3(0, upStep, 0);
+        } else if (Input.GetKeyDown(KeyCode.DownArrow)){
+            xrPlayer.transform.position += new Vector3(0, -upStep, 0);
         }
     }
 
