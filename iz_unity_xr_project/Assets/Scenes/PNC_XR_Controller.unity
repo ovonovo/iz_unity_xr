@@ -6255,7 +6255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23adefc5ae2c8845978fe24fffd3957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVR: 0
+  isVR: 1
   XRObjects:
   - {fileID: 969542921}
   - {fileID: 377382069}
@@ -9981,7 +9981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &880474274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13459,7 +13459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1440874776
 MonoBehaviour:
   m_ObjectHideFlags: 0

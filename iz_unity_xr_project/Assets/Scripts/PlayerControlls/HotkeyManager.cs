@@ -106,9 +106,11 @@ public class HotkeyManager : MonoBehaviour
 
         // move Scene up in VR with arrow keys
         if (Input.GetKeyDown(KeyCode.UpArrow)){
-            xrPlayer.transform.position += new Vector3(0, upStep, 0);
+            if(Input.GetKey(KeyCode.LeftShift)) xrPlayer.transform.position += new Vector3(0, upStep * 10, 0);
+            else xrPlayer.transform.position += new Vector3(0, upStep, 0);
         } else if (Input.GetKeyDown(KeyCode.DownArrow)){
-            xrPlayer.transform.position += new Vector3(0, -upStep, 0);
+            if(Input.GetKey(KeyCode.LeftShift)) xrPlayer.transform.position += new Vector3(0, -upStep * 10, 0);
+            else xrPlayer.transform.position += new Vector3(0, -upStep, 0);
         }
     }
 
