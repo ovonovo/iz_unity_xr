@@ -1,30 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WASD_PlayerController : MonoBehaviour
 {
-    // Controller für den Screenshot Modus
-    public float gravity = 9.81f;
-    public float speed = 2;
 
-    CharacterController controller;
-    Vector3 playerVelocity;
+    public float gravity = -9.81f;
+    public CharacterController characterController;
 
     [Header("Mouse Look")]
-    public Camera cam;
+    Camera cam;
     Vector3 camStartHeight;
-    public Vector2 sensitivity = new Vector2(100, 100);
-    public float minRotationY = -60;
-    public float maxRotationY = 60;
-    float xRot = 0;
+    public Vector2 sensitivity = new Vector2(100f, 100f);
+    public Vector2 clampRotationY = new Vector3(-60f, 60f);
+    float xRot = 0f;
+    public float speed = 20;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        camStartHeight = cam.transform.position;
+        cam = Transform.FindObjectOfType<Camera>();
+        camStartHeight = cam.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -32,18 +28,20 @@ public class WASD_PlayerController : MonoBehaviour
     {
         MouseLook();
         MovePlayer();
-        
-        if(Input.GetKeyDown(KeyCode.B)){
-            TakeScreenshot();
-        }
     }
 
-    void MouseLook(){
+    void MouseLook()
+    {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity.x * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity.y * Time.deltaTime;
 
+        // wenn die Maus Y einen ungewöhnlichen Wert hat, der dazu führt, dass die Kamera nach unten schaut,
+        // wird der Wert auf 0 gesetzt. Ansonsten wird die Kamera nach oben gedreht.
+        if (mouseY > 10) mouseY = 0;
+        else if (mouseY < -10) mouseY = 0;
+
         xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, minRotationY, maxRotationY);
+        xRot = Mathf.Clamp(xRot, clampRotationY.x, clampRotationY.y);
 
         // Drehung des Bodys nach links und rechts
         transform.Rotate(Vector3.up * mouseX);
@@ -51,38 +49,38 @@ public class WASD_PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(xRot, 0, 0);
     }
 
-    void MovePlayer(){
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+
+    void MovePlayer()
+    {
+        // read the inputs for movement
+        float hor = Input.GetAxis("Horizontal");
+        float ver = Input.GetAxis("Vertical");
         bool up = Input.GetKey(KeyCode.Q);
         bool down = Input.GetKey(KeyCode.E);
-        bool reset = Input.GetKeyDown(KeyCode.R);
+        bool reset = Input.GetKey(KeyCode.R);
 
-        // calculate move direction
-        Vector3 move = (transform.forward * z) + (transform.right * x);
+        // calculate the direction of the player
+        Vector3 move = (transform.forward * ver) + (transform.right * hor);
+        print(move);
+        Vector3 playerVelocity = move * speed * Time.deltaTime;
+        playerVelocity.y += (gravity) * Time.deltaTime;
 
-        playerVelocity = move * speed * Time.deltaTime;
-        playerVelocity.y += (-gravity) * Time.deltaTime;
-        controller.Move(playerVelocity);
+        print(playerVelocity);
+        
+        characterController.Move(playerVelocity);
 
-        // rise and lower cam for screenshots
-        if(up){
-            cam.transform.position += Vector3.up * 0.02f;
-        }else if(down){
-            cam.transform.position -= Vector3.up * 0.02f;
+        if (up)
+        {
+            cam.transform.position += transform.up * 0.02f;
         }
-        if(reset){
-            cam.transform.position = camStartHeight;
+        else if (down)
+        {
+            cam.transform.position -= transform.up * 0.02f;
         }
-    }
 
-    void TakeScreenshot(){
-        string timeStemp = System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss");
-        string fileName = "Screenshot_" + timeStemp + ".png";
-        // string pathToSave = Application.persistentDataPath + "/Screenshots/" + fileName;  
-        string pathToSave = "Screenshots/" + fileName;  
-
-        ScreenCapture.CaptureScreenshot(pathToSave);
-        print("Took screenshot");
+        if (reset)
+        {
+            cam.transform.localPosition = camStartHeight;
+        }
     }
 }
